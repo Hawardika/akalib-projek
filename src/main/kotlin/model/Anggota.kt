@@ -46,7 +46,7 @@ data class Anggota(
     // Method untuk menampilkan info anggota
     // Behavior yang terikat dengan data
     // ============================================================
-    fun anggota() {
-        println("Anggota bernama $nama dengan id $id memiliki tier $tier dan status aktif: $statusAktif")
-    }
+//    fun anggota() {
+//        println("Anggota bernama $nama dengan id $id memiliki tier $tier dan status aktif: $statusAktif")
+//    }
 }
