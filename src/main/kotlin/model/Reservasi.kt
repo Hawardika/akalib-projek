@@ -32,9 +32,9 @@ data class Reservasi(
     fun daftar(anggotaId: String) {
         if (!antrian.contains(anggotaId)) {
             antrian.addLast(anggotaId)  // Tambah di belakang (FIFO)
-            println("✅ Anggota $anggotaId berhasil didaftarkan ke antrian buku $bukuId.")
+            println(" Anggota $anggotaId berhasil didaftarkan ke antrian buku $bukuId.")
         } else {
-            println("⚠️ Anggota $anggotaId sudah ada dalam antrian buku $bukuId.")
+            println(" Anggota $anggotaId sudah ada dalam antrian buku $bukuId.")
         }
     }
 
@@ -46,9 +46,9 @@ data class Reservasi(
     fun next(): String? {
         val berikutnya: String? = antrian.firstOrNull()
         if (berikutnya != null) {
-            println("🔍 Anggota berikutnya dalam antrian buku $bukuId adalah: $berikutnya")
+            println(" Anggota berikutnya dalam antrian buku $bukuId adalah: $berikutnya")
         } else {
-            println("📭 Antrian buku $bukuId kosong.")
+            println(" Antrian buku $bukuId kosong.")
         }
         return berikutnya
     }
@@ -60,11 +60,11 @@ data class Reservasi(
     // ============================================================
     fun ambilBerikutnya(): String? {
         if (antrian.isEmpty()) {
-            println("📭 Tidak ada anggota yang bisa diambil dari antrian buku $bukuId.")
+            println(" Tidak ada anggota yang bisa diambil dari antrian buku $bukuId.")
             return null
         } else {
             val diambil: String = antrian.removeFirst()
-            println("📤 Anggota $diambil telah diambil dari antrian buku $bukuId.")
+            println(" Anggota $diambil telah diambil dari antrian buku $bukuId.")
             return diambil
         }
     }
@@ -75,7 +75,7 @@ data class Reservasi(
     // ============================================================
     fun kosong(): Boolean {
         val statusKosong: Boolean = antrian.isEmpty()
-        println("📊 Status antrian buku $bukuId kosong: $statusKosong")
+        println(" Status antrian buku $bukuId kosong: $statusKosong")
         return statusKosong
     }
 
@@ -85,7 +85,7 @@ data class Reservasi(
     // ============================================================
     fun jumlah(): Int {
         val total: Int = antrian.size
-        println("📈 Jumlah anggota dalam antrian buku $bukuId: $total")
+        println(" Jumlah anggota dalam antrian buku $bukuId: $total")
         return total
     }
 }

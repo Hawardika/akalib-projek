@@ -27,7 +27,7 @@ class MemberService(
     // ============================================================
     fun tambahAnggota(anggota: Anggota) {
         repo.save(anggota)
-        println("✅ Anggota '${anggota.nama}' berhasil ditambahkan.")
+        println(" Anggota '${anggota.nama}' berhasil ditambahkan.")
     }
 
     fun cariAnggotaById(id: String): Anggota? = repo.findById(id)
@@ -44,19 +44,19 @@ class MemberService(
         if (anggota != null) {
             anggota.statusAktif = status
             repo.update(id, anggota)
-            println("✅ Status anggota '$id' diubah menjadi '$status'.")
+            println(" Status anggota '$id' diubah menjadi '$status'.")
             return true
         }
-        println("❌ Anggota dengan ID '$id' tidak ditemukan.")
+        println(" Anggota dengan ID '$id' tidak ditemukan.")
         return false
     }
 
     fun hapusAnggota(id: String): Boolean {
         val berhasil = repo.delete(id)
         if (berhasil) {
-            println("✅ Anggota dengan ID '$id' berhasil dihapus.")
+            println(" Anggota dengan ID '$id' berhasil dihapus.")
         } else {
-            println("❌ Anggota dengan ID '$id' tidak ditemukan.")
+            println(" Anggota dengan ID '$id' tidak ditemukan.")
         }
         return berhasil
     }
